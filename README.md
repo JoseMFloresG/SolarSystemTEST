@@ -2,6 +2,7 @@
 <p align="center">
   <img src=https://github.com/vanttec/vanttec_uuv/blob/master/docs/LogoNegro_Azul.png width="400" height="240" align="center"/>
 </p>
+
 ### Proceso necesario para la instalacion
 
 ## Requerimientos iniciales ###
