@@ -6,8 +6,8 @@
 
 ## Requerimientos iniciales ###
 
--**Particion de Linux.**
--**Docker.**
+ -**Particion de Linux.**
+ -**Docker.**
     
 ## Instalacion de Docker ###
 
