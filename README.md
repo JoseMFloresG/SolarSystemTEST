@@ -8,11 +8,11 @@
     
 ## Instalacion de Docker ###
 
--Los pasos vienen en la siguiente pagina [Docker Installation](https://docs.docker.com/engine/install/ubuntu/)
+    -Los pasos vienen en la siguiente pagina [Docker Installation](https://docs.docker.com/engine/install/ubuntu/)
     
 ## Recomendaciones Docker ###
 
--En VS Code tienen su propia extension que te permitira ver tus contenedores
+    -En VS Code tienen su propia extension que te permitira ver tus contenedores
     
 ## Instalacion Nvidia - Docker2 ###
 
