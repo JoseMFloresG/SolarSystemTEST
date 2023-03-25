@@ -143,6 +143,8 @@ sudo apt-get install ros-melodic-xacro
 ## Librerias faltantes o que requieren versiones anteriores ###
 
 ```
+sudo pip3 install --upgrade pip
+
 sudo apt-get install python3-rospkg
 
 sudo apt install python3-pandas
