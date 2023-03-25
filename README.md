@@ -40,12 +40,8 @@ sudo make uuv.intelcreate
 
  - Desactivar secure boot en la BIOS
 
-## Clonacion del repositorio (Solo si es la primera vez)###
+## Clonacion del repositorio ###
 
- - Abrir Github e ir a la configuracion de tu perfil
- - Ir a Developer settings
- - Entrar a Tokens (classic) dentro de Personal access tokens
- - Generar un token. (Tendras que seleccionar los permisos que te quieras dar, selecciona todos, menos el de borrar repositorios)
  - Ir al siguiente repositorio ![UV_dev_docker](https://github.com/vanttec/UV_dev_docker)
  - Ahora deberas crearte una cuenta de docker en la siguiente pagina: ![DOCKER](https://hub.docker.com/signup)
  - Abres una terminal en linux e ingresas los siguiente comandos:
