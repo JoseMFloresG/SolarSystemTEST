@@ -219,6 +219,10 @@ rosrun octomap_server uuv_octomap.py
  
 rosrun octomap_server oclust_aserver.py
 ```
+### O puedes correr todos los comando anteriores al mismo tiempo, corriendo el siguiente comando
+```
+roslaunch vanttec_uuv sim.launch
+```
 ### Este solo correlo cuando quieras ejecutar el nodo de vision
 ```
 rosrun vanttec_uuv yolo_zed.py
