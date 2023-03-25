@@ -1,4 +1,4 @@
-# UUV_dev_docker
+# UUV Sim Documentation
 <p align="center">
   <img src=https://github.com/vanttec/vanttec_uuv/blob/master/docs/LogoNegro_Azul.png width="400" height="240" align="center"/>
 </p>
@@ -7,7 +7,7 @@
 
 ## Requerimientos iniciales ###
 
- - **Particion de Linux.**
+ - [**Particion de Linux.**](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjllKHt4PX9AhVMIUQIHRQNCUkQFnoECC0QAQ&url=https%3A%2F%2Fwww.xataka.com%2Fbasics%2Fcomo-instalar-linux-a-windows-10-ordenador&usg=AOvVaw2GEiRuUGLx-Iwj4YZMo119)
  - **Docker.**
     
 ## Instalacion de Docker ###
@@ -38,10 +38,9 @@ sudo make uuv.intelcreate
     
 ## Posible error de drivers ###
 
- - Revisar que si allan instalado los drivers correctos
  - Desactivar secure boot en la BIOS
 
-## Clonacion del repositorio ###
+## Clonacion del repositorio (Solo si es la primera vez)###
 
  - Abrir Github e ir a la configuracion de tu perfil
  - Ir a Developer settings
@@ -61,6 +60,17 @@ sudo docker login
 sudo make uuv.build
 ```
  - A partir de aqui sigue los pasos descritos en el repositorio
+
+## Herramientas de compilacion ###
+
+```
+sudo apt-get install python3-catkin-tools
+```
+- El comando para compilar es
+```
+catkin build
+```
+
 
 ## Repositorios a descargar ###
     
@@ -100,6 +110,7 @@ cd ../
  - Para poder hacer catkin_make primero hay que sourcear la terminal
 ```
 source /ws/devel/setup.bash
+catkin build
 ```
 
 ## Configuraciones iniciales ###
@@ -109,16 +120,6 @@ Si estas usando DOCKER
 ```
 source /ws/devel/setup.bash
 export SVGA_VGPU10=0
-```
-
-## Herramientas de compilacion ###
-
-```
-sudo apt-get install python3-catkin-tools
-```
-- El comando para compilar es
-```
-catkin build
 ```
 
 ## Librerias necesarias ###
@@ -142,14 +143,6 @@ sudo apt-get install ros-melodic-robot-state-publisher
 sudo apt-get install ros-melodic-xacro
 
 ```
-
-## Archivos faltantes ###
-
- - Colocar el bootlegger.jpg y el gmangate.jpg en vanttec_uv_sim/uv_worlds/models/gate1
- - Colocar el camera2.yaml en octomap_mapping/octomap_server/cfg/common
- - Colocar el RoboSub2021.launch en darknet_ros/launch
- - El cual requiere poner el robosub_2021_tiny3.cfg en darknet_ros/yolo_network_config/cfg 
- - Colocar robosub2021_96_98.weights en darknet_ros/yolo_network_config/weights
 
 ## Librerias faltantes o que requieren versiones anteriores ###
 
@@ -186,6 +179,17 @@ Error: El submarino se carga en la superficie en lugar de bajo el agua.
 Error: darknet_ros imprime “waiting for image” y no carga YOLO.
 **Solución:** Dentro de /ws/src/darknet_ros/darknet_ros/config/ros.yaml en la línea 4 sustituir “/camera/rgb/image_raw” por “/invert_image” y dentro de  /ws/src/darknet_ros/darknet_ros/launch/RoboSub2021.launch en la línea 26 cambiar el default por “false”.
 
+Error: Error response from daemon: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error running hook #0: error running hook: exit status 1, stdout: , stderr: Auto-detected mode as 'legacy'
+
+**Solucion:**
+Correr los siguientes comandos
+
+```
+sudo apt install libnvidia-cfg1-515
+sudo nvidia-persistenced --user USER #reemplaza USER con tu nombre de usuario de Ubuntu
+sudo nvidia-smi
+```
+
 # Instrucciones para correr el simulador
 
 ## Si lo estas corriendo localmente en cada terminal ejecuta el siguiente comando al inicio: ###
@@ -216,7 +220,9 @@ roslaunch octomap_server octomap_tracking_server.launch
 rosrun octomap_server uuv_octomap.py
  
 rosrun octomap_server oclust_aserver.py
-
+```
+### Este solo correlo cuando quieras ejecutar el nodo de vision
+```
 rosrun vanttec_uuv yolo_zed.py
 
 ```
@@ -280,20 +286,6 @@ Continuamos corriendo:
 ```
 pip install --upgrade opencv-python
 ```
-
-## Knowledge errors ###
-
-Error: Error response from daemon: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error running hook #0: error running hook: exit status 1, stdout: , stderr: Auto-detected mode as 'legacy'
-
-**Solucion:**
-Correr los siguientes comandos
-
-```
-sudo apt install libnvidia-cfg1-515
-sudo nvidia-persistenced --user USER #reemplaza USER con tu nombre de usuario de Ubuntu
-sudo nvidia-smi
-```
-
     
 
 
