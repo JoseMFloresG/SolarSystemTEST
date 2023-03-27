@@ -66,12 +66,12 @@ catkin build
 ```
 cd /ws/src
 ```
-- ZED ROS WRAPPER: This repository is to use the ZED Camera 
+- ZED ROS WRAPPER: This repository is to use the ZED Camera [ZED Repository](https://github.com/stereolabs/zed-ros-wrapper)
 ```
 git clone --recursive https://github.com/stereolabs/zed-ros-wrapper.git
 ```
 
-- darknet_ros_zed (Paquete que nos permite usar YOLO)
+- darknet_ros (Paquete que nos permite usar YOLO) [Darknet Ros](https://github.com/leggedrobotics/darknet_ros)
 ```
 git clone --recursive https://github.com/vanttec/darknet_ros.git
 ```
@@ -86,7 +86,7 @@ catkin build j4
 
 ## How to use it ###
 
-- To use the camera see the documentation of the zed-ros-wrapper repository
+- To use the camera see the documentation of the zed-ros-wrapper repository [ZED Repository](https://github.com/stereolabs/zed-ros-wrapper)
 - Use rostopic to see the topic of the camera and change it on "darknet_ros/config/ros.yaml"
 - To launch the YOLO node:
 ```
