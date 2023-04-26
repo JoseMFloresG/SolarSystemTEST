@@ -93,6 +93,38 @@ chmod +x <Your ZED SDK>
 chmod +x <Your ZED SDK>
 ./<Your ZED SDK> -- silent
 ```
+## Librerias faltantes o que requieren versiones específicas ###
+```
+sudo pip3 install --upgrade pip
+
+sudo apt-get install python3-rospkg
+
+sudo apt install python3-pandas
+
+sudo apt install python-pip
+
+sudo apt-get install python3-sklearn
+
+pip3 install numpy==1.18
+
+pip3 install scipy==1.1.0
+
+pip3 install scikit-learn==0.21.3
+
+pip3 install joblib==1.0.0
+
+pip2 install opencv-contrib-python
+pip2 install opencv-python
+
+pip install imutils
+```
+## Archivos Faltantes ###
+Estos archivos se encuentran en el drive [SUB File](https://drive.google.com/drive/folders/1n8lwIeKVj_f0X7uYxjpccCf6gE2nJSBr?usp=sharing)
+
+- Colocar el camera2.yaml en octomap_mapping/octomap_server/cfg/common
+- Colocar el RoboSub2021.launch en darknet_ros/launch 
+- Poner el robosub_2021_tiny3.cfg en darknet_ros/yolo_network_config/cfg
+- Poner robosub2021_96_98.weights en darknet_ros/yolo_network_config/weights
 
 - Compile all
 ```
