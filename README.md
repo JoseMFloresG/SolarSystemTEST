@@ -79,6 +79,21 @@ git clone --recursive https://github.com/vanttec/darknet_ros.git
 - Follow the steps to install OpenCV on the section opencv_contrib
 [OpenCV](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html)
 
+## Install ZED SDK on your computer ### 
+- Get in this link [ZED SDK](https://www.stereolabs.com/developers/release/)
+- Download the version to your computer.
+```
+chmod +x <Your ZED SDK>
+./<Your ZED SDK> -- silent
+```
+
+## Install ZED SDK on the Docker ###
+- Download this file on the Docker [ZED SDK CUDA 12](https://download.stereolabs.com/zedsdk/4.0/cu121/ubuntu18)
+```
+chmod +x <Your ZED SDK>
+./<Your ZED SDK> -- silent
+```
+
 - Compile all
 ```
 catkin build j4
